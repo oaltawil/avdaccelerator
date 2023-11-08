@@ -1,0 +1,281 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "deploymentPrefix": {
+            "value": "AVD1"
+        },
+        "deploymentEnvironment": {
+            "value": "Dev"
+        },
+        "diskEncryptionKeyExpirationInDays": {
+            "value": 60
+        },
+        "avdSessionHostLocation": {
+            "value": "eastus"
+        },
+        "avdManagementPlaneLocation": {
+            "value": "eastus"
+        },
+        "avdWorkloadSubsId": {
+            "value": "10d458b2-3a46-4750-89b5-0c909568c864"
+        },
+        "avdEnterpriseAppObjectId": {
+            "value": "cb76a418-4a68-49bb-8e35-3dab3e36fbd4"
+        },
+        "avdVmLocalUserName": {
+            "value": "azureuser"
+        },
+        "avdVmLocalUserPassword": {
+            "reference": {
+                "keyVault": {
+                  "id": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourceGroups/rg-infra-eu-001/providers/Microsoft.KeyVault/vaults/kv-infra-eu-001"
+                },
+                "secretName": "LocalAdminPassword"
+              }
+        },
+        "avdIdentityServiceProvider": {
+            "value": "ADDS"
+        },
+        "createIntuneEnrollment": {
+            "value": false
+        },
+        "securityPrincipalId": {
+            "value": "c03b87d5-b7f3-437a-9252-b8321e48d0f1"
+        },
+        "securityPrincipalName": {
+            "value": ""
+        },
+        "identityDomainName": {
+            "value": "poltis.ca"
+        },
+        "identityDomainGuid": {
+            "value": "977e1658-5831-45c5-8525-d0b57e449b53"
+        },
+        "avdDomainJoinUserName": {
+            "value": "POLTIS\\DomainJoin"
+        },
+        "avdDomainJoinUserPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourceGroups/rg-infra-eu-001/providers/Microsoft.KeyVault/vaults/kv-infra-eu-001"
+                },
+                "secretName": "DomainJoinPassword"
+            }
+
+        },
+        "avdOuPath": {
+            "value": "OU=Workstations,OU=Computers,OU=Accounts,DC=poltis,DC=ca"
+        },
+        "avdHostPoolType": {
+            "value": "Pooled"
+        },
+        "hostPoolPreferredAppGroupType": {
+            "value": "Desktop"
+        },
+        "avdPersonalAssignType": {
+            "value": "Automatic"
+        },
+        "avdHostPoolLoadBalancerType": {
+            "value": "BreadthFirst"
+        },
+        "hostPoolMaxSessions": {
+            "value": 2
+        },
+        "avdStartVmOnConnect": {
+            "value": true
+        },
+        "avdHostPoolRdpProperties": {
+            "value": "audiocapturemode:i:1;audiomode:i:0;drivestoredirect:s:;redirectclipboard:i:1;redirectcomports:i:1;redirectprinters:i:1;redirectsmartcards:i:1;screen mode id:i:2"
+        },
+        "avdDeployScalingPlan": {
+            "value": true
+        },
+        "createAvdVnet": {
+            "value": false
+        },
+        "existingVnetAvdSubnetResourceId": {
+            "value": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourceGroups/rg-infra-eu-001/providers/Microsoft.Network/virtualNetworks/vnet-infra-eu-001/subnets/default"
+        },
+        "existingVnetPrivateEndpointSubnetResourceId": {
+            "value": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourceGroups/rg-infra-eu-001/providers/Microsoft.Network/virtualNetworks/vnet-infra-eu-001/subnets/default"
+        },
+        "existingHubVnetResourceId": {
+            "value": ""
+        },
+        "deployPrivateEndpointKeyvaultStorage": {
+            "value": true
+        },
+        "createPrivateDnsZones": {
+            "value": false
+        },
+        "avdVnetPrivateDnsZoneFilesId": {
+            "value": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourceGroups/rg-infra-eu-001/providers/Microsoft.Network/privateDnsZones/privatelink.file.core.windows.net"
+        },
+        "avdVnetPrivateDnsZoneKeyvaultId": {
+            "value": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourceGroups/rg-infra-eu-001/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net"
+        },
+        "vNetworkGatewayOnHub": {
+            "value": false
+        },
+        "createAvdFslogixDeployment": {
+            "value": true
+        },
+        "createMsixDeployment": {
+            "value": false
+        },
+        "fslogixFileShareQuotaSize": {
+            "value": 1
+        },
+        "msixFileShareQuotaSize": {
+            "value": 1
+        },
+        "avdDeploySessionHosts": {
+            "value": true
+        },
+        "deployGpuPolicies": {
+            "value": false
+        },
+        "avdDeployMonitoring": {
+            "value": false
+        },
+        "deployAlaWorkspace": {
+            "value": false
+        },
+        "deployCustomPolicyMonitoring": {
+            "value": false
+        },
+        "alaExistingWorkspaceResourceId": {
+            "value": "/subscriptions/10d458b2-3a46-4750-89b5-0c909568c864/resourcegroups/rg-infra-eu-001/providers/microsoft.operationalinsights/workspaces/log-infra-eu-001"
+        },
+        "avdDeploySessionHostsCount": {
+            "value": 1
+        },
+        "avdSessionHostCountIndex": {
+            "value": 0
+        },
+        "availabilityZonesCompute": {
+            "value": true
+        },
+        "zoneRedundantStorage": {
+            "value": false
+        },
+        "avsetFaultDomainCount": {
+            "value": 2
+        },
+        "avsetUpdateDomainCount": {
+            "value": 5
+        },
+        "fslogixStoragePerformance": {
+            "value": "Standard"
+        },
+        "msixStoragePerformance": {
+            "value": "Standard"
+        },
+        "diskZeroTrust": {
+            "value": false
+        },
+        "avdSessionHostsSize": {
+            "value": "Standard_D2ads_v5"
+        },
+        "avdSessionHostDiskType": {
+            "value": "Standard_LRS"
+        },
+        "enableAcceleratedNetworking": {
+            "value": true
+        },
+        "securityType": {
+            "value": "TrustedLaunch"
+        },
+        "secureBootEnabled": {
+            "value": true
+        },
+        "vTpmEnabled": {
+            "value": true
+        },
+        "avdOsImage": {
+            "value": "win11_22h2_office"
+        },
+        "managementVmOsImage": {
+            "value": "win11_22h2_office"
+        },
+        "useSharedImage": {
+            "value": false
+        },
+        "storageOuPath": {
+            "value": "OU=Servers,OU=Computers,OU=Accounts,DC=poltis,DC=ca"
+        },
+        "avdUseCustomNaming": {
+            "value": true
+        },
+        "avdServiceObjectsRgCustomName": {
+            "value": "rg-avd-dev-app1-eus-services"
+        },
+        "avdNetworkObjectsRgCustomName": {
+            "value": "rg-avd-dev-app1-eus-network"
+        },
+        "avdComputeObjectsRgCustomName": {
+            "value": "rg-avd-dev-app1-eus-compute"
+        },
+        "avdStorageObjectsRgCustomName": {
+            "value": "rg-avd-dev-app1-eus-storage"
+        },
+        "avdMonitoringRgCustomName": {
+            "value": "rg-avd-dev-app1-eus-monitoring"
+        },
+        "avdWorkSpaceCustomName": {
+            "value": "vdws-dev-app1-eus-001"
+        },
+        "avdWorkSpaceCustomFriendlyName": {
+            "value": "App1 - Dev - East US - 001"
+        },
+        "avdHostPoolCustomName": {
+            "value": "vdpool-dev-app1-eus-001"
+        },
+        "avdHostPoolCustomFriendlyName": {
+            "value": "App1 - Dev - East US - 001"
+        },
+        "avdScalingPlanCustomName": {
+            "value": "vdscaling-dev-app1-eus-001"
+        },
+        "avdApplicationGroupCustomName": {
+            "value": "vdag-desktop-dev-app1-eus-001"
+        },
+        "avdApplicationGroupCustomFriendlyName": {
+            "value": "Desktops - App1 - Dev - East US - 001"
+        },
+        "avdSessionHostCustomNamePrefix": {
+            "value": "vmapp1deus"
+        },
+        "avsetCustomNamePrefix": {
+            "value": "avail"
+        },
+        "storageAccountPrefixCustomName": {
+            "value": "st"
+        },
+        "fslogixFileShareCustomName": {
+            "value": "profiles"
+        },
+        "msixFileShareCustomName": {
+            "value": "msix"
+        },
+        "avdWrklKvPrefixCustomName": {
+            "value": "kv"
+        },
+        "ztDiskEncryptionSetCustomNamePrefix": {
+            "value": "des-zt"
+        },
+        "ztManagedIdentityCustomName": {
+            "value": "id-zt"
+        },
+        "ztKvPrefixCustomName": {
+            "value": "kv-key"
+        },
+        "createResourceTags": {
+            "value": false
+        },
+        "enableTelemetry": {
+            "value": true
+        }
+    }
+}
